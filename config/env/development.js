@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://PantrackAdmin:PantryTrackPassword@linus.mongohq.com:10004/PantrackDB',
+	db: 'mongodb://nodejitsu:35d8979d6ae7d9d1575a32c442cfa113@troup.mongohq.com:10086/nodejitsudb8821022547',
 	app: {
 		title: 'Pantrack - Development Environment'
 	},
