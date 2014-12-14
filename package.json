@@ -1,6 +1,7 @@
 {
   "name": "pantrack",
   "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
+  "subdomain": "voorraadbeheer",
   "version": "0.0.1",
   "author": "MBO",
   "engines": {
