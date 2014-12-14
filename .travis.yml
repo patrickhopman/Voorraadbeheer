@@ -17,6 +17,6 @@ deploy:
   provider: nodejitsu
   user: patrickhopman
   api_key:
-    secure: c5Sj1DY8+CUzxR5DKVaHwckTH8LzEx10dmDiHFKm5pSVWG2tNoW1Wd1RN9oJIkTDbeu0ZUke5wOw2GqWvoLRVkblQoBDKbX1xMC/gHf2WlXcn53r/StJuRz7O6Rwyr21+qCfQEceEuAQ1Te5z+sKZeUqbxoZ1YmH41Ll7gn1zWs=
+    secure: GWmivzcNMGoaESiYbJiYXIVVoyz5CX1Fc9b+gUSnORNIvBWEGRq0BdbAiO+xuUjz5KKu8JBsFNXnpYeAMsau/x7rLcbxTHdlwOXOsOAH9927+6j2HWG6PSidp6reQfW/pI8QU0uxHS4zKnYnQkYQbJGKd8HAy0eQSMdWicD0HTo=
   on:
     repo: patrickhopman/Voorraadbeheer
