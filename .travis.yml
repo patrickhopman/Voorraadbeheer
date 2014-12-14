@@ -11,3 +11,5 @@ before_script:
   - npm install -g grunt-cli
   - npm install -g bower
   - bower install
+notifications:
+  slack: stopverf:x19pw3uwpsTdXi0KMHzKZ1M4
