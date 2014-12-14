@@ -1,15 +1,22 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
 services:
-  - mongodb
+- mongodb
 env:
   global:
-    - NODE_ENV=travisci
-    - BUILD_DIR=`pwd`/zpratt
+  - NODE_ENV=travisci
+  - BUILD_DIR=`pwd`/zpratt
 before_script:
-  - npm install -g grunt-cli
-  - npm install -g bower
-  - bower install
+- npm install -g grunt-cli
+- npm install -g bower
+- bower install
 notifications:
   slack: stopverf:x19pw3uwpsTdXi0KMHzKZ1M4
+deploy:
+  provider: nodejitsu
+  user: patrickhopman
+  api_key:
+    secure: c5Sj1DY8+CUzxR5DKVaHwckTH8LzEx10dmDiHFKm5pSVWG2tNoW1Wd1RN9oJIkTDbeu0ZUke5wOw2GqWvoLRVkblQoBDKbX1xMC/gHf2WlXcn53r/StJuRz7O6Rwyr21+qCfQEceEuAQ1Te5z+sKZeUqbxoZ1YmH41Ll7gn1zWs=
+  on:
+    repo: patrickhopman/Voorraadbeheer
