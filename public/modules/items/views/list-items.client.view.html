@@ -1,0 +1,118 @@
+<section data-ng-controller="ItemsController">
+    <div class="page-header">
+      <img src="http://www.thinkfresher.com/images/pantry/Icon.png" style="float:left; height:40px; width:auto; margin-right:5px;"><h1>Voorraad</h1>
+    </div>
+<!--
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th># Artikel</th>
+        <th>Voorraad</th>
+        <th>Gewenste hoeveelheid</th>
+        <th><a href="/#!/items/create" class="pull-right" style="color: inherit"><i class="glyphicon glyphicon-plus"></i></a></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items">
+          <td>
+            <a data-ng-href="#!/items/{{item._id}}">{{item.name}}</a>
+          </td>
+          <td>
+            {{item.amount}}
+          </td>
+          <td>
+            {{item.amountDesired}}
+          </td>
+          <td>
+            <div class="pull-right btn-group" data-ng-show="authentication.user._id == item.user._id">
+                <button type="button" class="btn btn-warning btn-sm">
+                    <a href="/#!/items/{{item._id}}/edit" style="color: inherit"><i class="glyphicon glyphicon-edit"></i></a>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm">
+  todo                    <a data-ng-click="remove(item);" style="color: inherit"><i class="glyphicon glyphicon-trash"></i></a> 
+                </button>
+            </div>
+          </td>
+        </tr>
+
+    </tbody>
+    </table>
+
+    <div class="alert alert-warning text-center" data-ng-hide="!items.$resolved || items.length">
+    	No Items yet, why don't you <a href="/#!/items/create">create one</a>?
+    </div>
+-->
+
+<div class="input-group input-group-sm col-md-3">
+  <span class="input-group-addon"><i class="glyphicon glyphicon glyphicon-search"></i></span>
+  <input type="text" name="name" ng-model="tableParams.filter()['name']" class="input-filter form-control ng-scope ng-pristine" placeholder="Zoeken">
+</div>
+<!--
+        <div class="col-md-3">
+          <input type="text" name="name" ng-model="tableParams.filter()['name']" class="input-filter form-control ng-scope ng-pristine"> 
+        </div>
+-->
+
+        <br>
+
+<div>
+
+    <table ng-table="tableParams" show-filter="true"> 
+<!--
+      <thead>
+        <tr>
+          <th># Artikel</th>
+          <th>Voorraad</th>
+          <th>Gewenste hoeveelheid</th>
+          <th><a href="/#!/items/create" class="pull-right" style="color: inherit"><i class="glyphicon glyphicon-plus"></i></a></th>
+        </tr>
+      </thead>
+-->
+      <tbody>
+
+      <tr ng-repeat="item in $data">
+        <td data-title="'# Artikel'"> <!-- filter="{ 'name': 'text' }" -->
+          <a data-ng-href="#!/items/{{item._id}}" editable-text="item.name" onaftersave="updateItem()">{{item.name}}</a>
+        </td>
+        <td data-title="'Voorraad'" editable-text="item.amount">
+          {{item.amount}}
+        </td>
+        <td data-title="'Gewenste hoeveelheid'">
+          {{item.amountDesired}}
+        </td>
+        <td>
+              <div class="pull-right btn-group" data-ng-show="authentication.user._id == item.user._id">
+                  <button type="button" class="btn btn-warning btn-sm">
+                      <a href="/#!/items/{{item._id}}/edit" style="color: inherit"><i class="glyphicon glyphicon-edit"></i></a>
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm">
+   <!-- todo -->                   <a data-ng-click="remove(item);" style="color: inherit"><i class="glyphicon glyphicon-trash"></i></a> 
+                  </button>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+      
+    </table>
+    <!--{{tableParams.filter()|json}}-->
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!--
+    <div class="pull-right" data-ng-show="authentication.user._id == item.user._id">
+        <a class="btn btn-primary" href="/#!/items/{{item._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" data-ng-click="remove();">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+-->

@@ -1,0 +1,108 @@
+.content {
+	margin-top: 50px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty{
+    border-color:#FA787E;
+}
+.ng-valid.ng-dirty{
+    border-color:#78FA89;
+}
+.col-md-2{
+	padding-left: 5px;
+    padding-right: 5px;
+}
+.servive-block .servive-block-in {
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    background: #fafafa;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.servive-block .servive-block-in:hover {
+    box-shadow: 0 0 8px #ddd;
+}
+.servive-block .servive-block-in h4 {
+	font-size: 22px;
+    line-height: 25px;
+}
+.servive-block .servive-block-in h4 a:hover {
+    color: #72c02c;
+    text-decoration: none;
+}
+.servive-block .servive-block-in:hover h4, .servive-block .servive-block-in:hover i {
+    color: #72c02c;
+}
+.servive-block .servive-block-in i {
+    color: #565656;
+    font-size: 50px;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.servive-block .servive-block-red {
+    background: #e74c3c;
+}
+.servive-block .servive-block-sea {
+    background: #1abc9c;
+}
+.servive-block .servive-block-blue {
+    background: #3498db;
+}
+.servive-block .servive-block-grey {
+    background: #bbb;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+.servive-block .servive-block-yellow {
+    background: #f1c40f;
+}
+.servive-block .servive-block-orange {
+    background: #e67e22;
+}
+.servive-block .servive-block-green {
+    background: #2ecc71;
+}
+.servive-block .servive-block-colored h4, .servive-block .servive-block-colored i, .servive-block .servive-block-colored p, .servive-block .servive-block-colored:hover h4, .servive-block .servive-block-colored:hover i {
+    color: #fff;
+}
+.servive-block .servive-block-colored:hover {
+    opacity: .8;
+    box-shadow: none;
+}
+.ng-table {
+    width: 100%;
+}
+.ng-table > thead > tr > th {
+    text-align:left;
+    border:0;
+}
+.ng-table > tbody > tr > th, .ng-table > tfoot > tr > th, .ng-table > thead > tr > td, .ng-table > tbody > tr > td, .ng-table > tfoot > tr > td {
+    height: 50px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.ng-table-filters {
+    heigt: 60px;
+}
+.ng-table-filters .filter {
+    vertical-align: top;
+}
+.ng-table >thead > tr > th {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.actions {
+    margin-bottom:30px;
+}
+.table-actions {
+    width: 130px;
+}

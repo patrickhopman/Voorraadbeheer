@@ -1,0 +1,63 @@
+<section data-ng-controller="ScannerController" data-ng-init="startScanner()">
+	<div class="page-header">
+		<img src="http://a5.mzstatic.com/us/r30/Purple/v4/ae/1a/cb/ae1acb72-5fc0-bf46-e493-6efa27f9464a/icon_256.png" style="float:left; height:40px; width:auto; margin-right:5px;"><h1>Scan</h1>
+	</div>
+
+</img src="http://gdh3.lu/onon/wp-content/uploads/2014/07/black.square.jpg">
+
+<!-- onzin below -->
+
+<video autoplay loop preload="auto" poster="http://gdh3.lu/onon/wp-content/uploads/2014/07/black.square.jpg">
+    
+</video>
+
+
+
+<body>
+  <div>
+    <video id="video" width="500" autoplay></video>
+  </div>
+</body>
+
+
+
+<!--
+<script type="text/javascript">
+ 
+window.addEventListener('DOMContentLoaded', function() {
+   var v = document.getElementById('v');
+   navigator.getUserMedia = (navigator.getUserMedia || 
+                             navigator.webkitGetUserMedia || 
+                             navigator.mozGetUserMedia || 
+                             navigator.msGetUserMedia);
+   if (navigator.getUserMedia) {
+      // Request access to video only
+      navigator.getUserMedia(
+         {
+            video:true,
+            audio:false
+         },        
+         function(stream) {
+            var url = window.URL || window.webkitURL;
+            v.src = url ? url.createObjectURL(stream) : stream;
+            v.play();
+         },
+         function(error) {
+            alert('Something went wrong. (error code ' + error.code + ')');
+            return;
+         }
+      );
+   }
+   else {
+      alert('Sorry, the browser you are using doesn\'t support getUserMedia');
+      return;
+   }
+}
+
+</script>
+
+<video id='v'></video>
+
+-->
+
+</section>
