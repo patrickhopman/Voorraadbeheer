@@ -30,7 +30,7 @@ module.exports = {
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
 				'public/lib/ng-table/ng-table.min.js',
 				'public/lib/angular-xeditable/dist/js/xeditable.min.js',
-				'public/lib/quaggaJS/dist/quagga.js',
+				'public/lib/quaggaJS/quagga.js',
 				'public/lib/jquery/dist/jquery.min.js',
 				'public/lib/custom/custom.js'
 			]
