@@ -18,7 +18,7 @@
     padding-right: 5px;
 }
 .servive-block .servive-block-in {
-    padding: 20px 30px;
+    padding: 20px;
     text-align: center;
     margin-bottom: 10px;
     background: #fafafa;
@@ -31,7 +31,7 @@
     box-shadow: 0 0 8px #ddd;
 }
 .servive-block .servive-block-in h4 {
-	font-size: 22px;
+	font-size: 19px;
     line-height: 25px;
 }
 .servive-block .servive-block-in h4 a:hover {
