@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 		clientViews: ['public/modules/**/views/**/*.html'],
 		clientJS: ['public/js/*.js', 'public/modules/**/*.js'],
 		clientCSS: ['public/modules/**/*.css'],
+		SASS: ['public/modules/**/*.scss'],
 		mochaTests: ['app/tests/**/*.js']
 	};
 
@@ -44,6 +45,13 @@ module.exports = function(grunt) {
 			clientCSS: {
 				files: watchFiles.clientCSS,
 				tasks: ['csslint'],
+				options: {
+					livereload: true
+				}
+			},
+			SASS: {
+				files: watchFiles.SASS,
+				tasks: ['libsass', 'csslint'],
 				options: {
 					livereload: true
 				}
@@ -135,6 +143,17 @@ module.exports = function(grunt) {
 		karma: {
 			unit: {
 				configFile: 'karma.conf.js'
+			}
+		},
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded',
+					compass: false
+				},
+				files: {
+					'public/lib/css/style.css': 'public/modules/{,*/}*.{scss,sass}',
+				}
 			}
 		}
 	});
