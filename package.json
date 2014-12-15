@@ -13,9 +13,6 @@
     "test": "node node_modules/grunt-cli/bin/grunt test",
     "postinstall": "node node_modules/bower/bin/bower install --config.interactive=false"
   },
-  "bundledDependencies": [
-    "grunt"
-  ],
   "dependencies": {
     "express": "~4.9.5",
     "express-session": "~1.8.2",
