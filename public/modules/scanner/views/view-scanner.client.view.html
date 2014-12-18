@@ -3,22 +3,76 @@
 		<img src="http://a5.mzstatic.com/us/r30/Purple/v4/ae/1a/cb/ae1acb72-5fc0-bf46-e493-6efa27f9464a/icon_256.png" style="float:left; height:40px; width:auto; margin-right:5px;"><h1>Scan</h1>
 	</div>
 
-</img src="http://gdh3.lu/onon/wp-content/uploads/2014/07/black.square.jpg">
+
 
 <!-- onzin below -->
 
+<!--
 <video autoplay loop preload="auto" poster="http://gdh3.lu/onon/wp-content/uploads/2014/07/black.square.jpg">
-    
 </video>
 
+-->
 
 
+<div id="interactive" class="viewport">
+  <video autoplay="true" preload="auto" src="undefined">
+  </video>
+</div>
+
+<!-- onzin below
 <body>
   <div>
     <video id="video" width="500" autoplay></video>
   </div>
 </body>
 
+ -->
+<script type="text/javascript">
+$(function() {
+    var App = {
+        init : function() {
+            Quagga.init({
+                inputStream : {
+                    name : "Live",
+                    type : "LiveStream"
+                },
+                decoder : {
+                    readers : ["code_128_reader"]
+                },
+                readyFunc : function() {
+                    App.attachListeners();
+                    Quagga.start();
+                }
+            });
+        },
+        attachListeners : function() {
+            $(".controls .reader-group").on("change", "input", function(e) {
+                e.preventDefault();
+                Quagga.setReaders([e.target.value + "_reader"]);
+            });
+        },
+        detachListeners : function() {
+            $(".controls .reader-group").off("change", "input");
+        },
+        lastResult : null
+    };
+
+    App.init();
+
+    Quagga.onDetected(function(result) {
+        if (App.lastResult !== result) {
+            App.lastResult = result;
+            var $node = null, canvas = Quagga.canvas.dom.image;
+
+            $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
+            $node.find("img").attr("src", canvas.toDataURL());
+            $node.find("h4.code").html(result);
+            $("#result_strip ul.thumbnails").prepend($node);
+        }
+    });
+
+});
+</script>
 
 
 <!--

@@ -1,8 +1,8 @@
 'use strict';
 
 // Scanner controller
-angular.module('scanner').controller('ScannerController', ['$scope', '$stateParams', '$location', 'Authentication', 'Quagga',
-	function($scope, $stateParams, $location, Authentication, $http, Quagga ) {
+angular.module('scanner').controller('ScannerController', ['$scope', '$stateParams', '$location', 'Authentication',
+	function($scope, $stateParams, $location, Authentication, $http ) {
 		$scope.authentication = Authentication;
 		
 		// Find a list of Scanner
@@ -52,7 +52,8 @@ angular.module('scanner').controller('ScannerController', ['$scope', '$statePara
 		};
 
 		$scope.startScanner = function(config, callback) {
-			Quagga.decodeSingle(config, callback);
+			Quagga.init(config, callback);
+			Quagga.start();
 		};
 		
 
