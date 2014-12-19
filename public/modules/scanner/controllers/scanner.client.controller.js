@@ -10,52 +10,53 @@ angular.module('scanner').controller('ScannerController', ['$scope', '$statePara
 			
 		};
 
-		var config = {
-		    inputStream: { 
-		    	name: 'Live',
-		        type: 'LiveStream'
-	  	    },
-		    tracking: false,
-	    	debug: false,
-		    controls: false,
-		  	locate: true,
-		  	visual: {
-		    	show: true
-		  	},
-		  	decoder:{
-			    drawBoundingBox: true,
-			    showFrequency: false,
-			    drawScanline: true,
-			    showPattern: false,
-			    readers: [
-			      'code_128_reader'
-			    ]
-		  	},
-		  	locator: {
-		    	showCanvas: false,
-		    	showPatches: false,
-		    	showFoundPatches: false,
-		    	showSkeleton: false,
-		    	showLabels: false,
-		    	showPatchLabels: false,
-		    	showRemainingPatchLabels: false,
-		    	boxFromPatches: {
-			      	showTransformed: false,
-			      	showTransformedBox: false,
-			      	showBB: false
-		    	}
-		  	}
-		};
+		$scope.startScanner = function() {
 
-		var callback = {
+		    var App = {
+		        init : function() {
+		            Quagga.init({
+		                inputStream : {
+		                    name : "Live",
+		                    type : "LiveStream"
+		                },
+		                decoder : {
+		                    showPattern: true,
+		                    readers : ["ean_reader"]
+		                },
+		                readyFunc : function() {
+		                    App.attachListeners();
+		                    Quagga.start();
+		                }
+		            });
+		        },
+		        attachListeners : function() {
+		            $(".controls .reader-group").on("change", "input", function(e) {
+		                e.preventDefault();
+		                Quagga.setReaders([e.target.value + "_reader"]);
+		            });
+		        },
+		        detachListeners : function() {
+		            $(".controls .reader-group").off("change", "input");
+		        },
+		        lastResult : null
+		    };
+
+		    App.init();
+
+			Quagga.onDetected(function(result) {
+	        if (App.lastResult !== result) {
+	            App.lastResult = result;
+	            var $node = null, canvas = Quagga.canvas.dom.image;
+
+	            $node = $('<li><div class="thumbnail"><div class="imgWrapper"><img /></div><div class="caption"><h4 class="code"></h4></div></div></li>');
+	            $node.find("img").attr("src", canvas.toDataURL());
+	            $node.find("h4.code").html(result);
+	            $("#result_strip ul.thumbnails").prepend($node);
+	            Quagga.stop();
+	        }
+		    });
 
 		};
-
-		$scope.startScanner = function(config, callback) {
-			Quagga.init(config, callback);
-			Quagga.start();
-		};
-		
 
 	}
 ]);
